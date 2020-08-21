@@ -1,6 +1,5 @@
 require 'open-uri'
 require 'json'
-require 'pry-byebug'
 
 Dose.delete_all
 Cocktail.delete_all
