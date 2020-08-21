@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
-  before_action :find_cocktail, only: %i[new create]
+  before_action :find_cocktail, only: %i[new create delete]
 
   def new
     @dose = Dose.new
@@ -19,7 +19,7 @@ class DosesController < ApplicationController
   def destroy
     @dose = Dose.find(params[:id])
     @dose.destroy
-    redirect_to dose_url, notice: 'Dose was successfully erased.'
+    redirect_to cocktail_path(@dose.cocktail_id), notice: 'Dose was successfully erased.'
   end
 
   def dose_params

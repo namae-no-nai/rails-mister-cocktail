@@ -10,9 +10,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <div class="container">
+  <div class="container">
+    <nav>
+      <%= render 'shared/navbar' %>
+    </nav>
+  <div class="container">
+    <body>
       <%= yield %>
-    </div>
-  </body>
+    <%= javascript_pack_tag "application" %>
+    <%= stylesheet_pack_tag "application" %>
+    </body>
 </html>
